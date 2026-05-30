@@ -1,0 +1,113 @@
+/* 激励 / 返利测算 · 滑块 + 投入条样式（仅本页用，token 驱动适配三主题）*/
+
+.inc-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+  transition: background var(--dur-base) var(--ease);
+  background: linear-gradient(
+    90deg,
+    var(--gold) 0%,
+    var(--gold) var(--inc-fill, 50%),
+    var(--surface-3) var(--inc-fill, 50%),
+    var(--surface-3) 100%
+  );
+}
+
+.inc-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid var(--bg-base);
+  box-shadow: 0 2px 8px var(--gold-glow), 0 0 0 1px var(--hairline-strong);
+  cursor: grab;
+  transition: transform var(--dur-micro) var(--ease), box-shadow var(--dur-micro) var(--ease);
+}
+.inc-slider::-webkit-slider-thumb:hover { transform: scale(1.12); box-shadow: 0 4px 14px var(--gold-glow), 0 0 0 1px var(--gold); }
+.inc-slider:active::-webkit-slider-thumb { cursor: grabbing; transform: scale(1.05); box-shadow: 0 0 0 6px var(--gold-glow); }
+
+.inc-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid var(--bg-base);
+  box-shadow: 0 2px 8px var(--gold-glow), 0 0 0 1px var(--hairline-strong);
+  cursor: grab;
+}
+.inc-slider::-moz-range-progress { background: var(--gold); height: 6px; border-radius: 999px; }
+.inc-slider::-moz-range-track { background: var(--surface-3); height: 6px; border-radius: 999px; }
+.inc-slider:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+/* 大数字结果 */
+.inc-result-num {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--text-1);
+  font-variant-numeric: tabular-nums;
+  transition: color var(--dur-base) var(--ease);
+}
+
+/* 预设方案卡 */
+.inc-preset {
+  text-align: left;
+  padding: 11px 13px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--hairline);
+  background: var(--surface-2);
+  cursor: pointer;
+  transition: all var(--dur-base) var(--ease);
+}
+.inc-preset:hover { border-color: var(--hairline-strong); background: var(--surface-3); transform: translateY(-1px); }
+.inc-preset.is-active { border-color: var(--gold); background: var(--gold-dim); box-shadow: inset 0 1px 0 var(--glass-highlight), 0 0 0 1px var(--gold-glow); }
+
+/* 投入拆解条 */
+.inc-bar {
+  height: 5px;
+  border-radius: 999px;
+  background: var(--surface-3);
+  overflow: hidden;
+}
+.inc-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width var(--dur-enter) var(--ease);
+}
+
+/* 投入产出平衡条（中线 = 盈亏平衡 ROI=1）*/
+.inc-balance {
+  position: relative;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--surface-3);
+  overflow: hidden;
+  margin-top: 14px;
+}
+.inc-balance-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width var(--dur-enter) var(--ease), background var(--dur-base) var(--ease);
+}
+.inc-balance-mid {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 2px;
+  height: 12px;
+  background: var(--hairline-strong);
+  transform: translateX(-50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inc-slider::-webkit-slider-thumb, .inc-preset, .inc-result-num,
+  .inc-bar-fill, .inc-balance-fill { transition: none; }
+}

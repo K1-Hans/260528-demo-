@@ -1,0 +1,83 @@
+/* 数据治理 · 来源 badge / 血缘节点样式（仅本页用，token 驱动适配三主题）*/
+
+.dg-kpi-num {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  font-variant-numeric: tabular-nums;
+  transition: color var(--dur-base) var(--ease);
+}
+
+/* 状态点 */
+.dg-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px color-mix(in srgb, currentColor 0%, transparent);
+}
+
+/* 来源类型 badge */
+.dg-src {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: var(--r-sm);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+/* 血缘行 */
+.dg-lineage {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: var(--r-md);
+  background: var(--surface-2);
+  border: 1px solid var(--hairline);
+  transition: border-color var(--dur-base) var(--ease), background var(--dur-base) var(--ease);
+}
+.dg-lineage:hover { border-color: var(--hairline-strong); background: var(--surface-3); }
+
+/* 上游来源节点 */
+.dg-node {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 11px;
+  border-radius: var(--r-sm);
+  font-size: 12px;
+  background: var(--surface-1);
+  border: 1px solid var(--hairline);
+}
+
+/* 下游消费指标 */
+.dg-consumer {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--r-sm);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-1);
+  background: var(--gold-dim);
+  border: 1px solid color-mix(in srgb, var(--gold) 30%, transparent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 720px) {
+  .dg-lineage { flex-direction: column; align-items: stretch; gap: 8px; }
+  .dg-consumer { white-space: normal; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dg-kpi-num, .dg-lineage { transition: none; }
+}

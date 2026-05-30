@@ -1,0 +1,81 @@
+/* What-if 策略沙盘 · 滑块样式（仅本页用，token 驱动适配三主题）*/
+
+.sb-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--surface-3);
+  outline: none;
+  cursor: pointer;
+  transition: background var(--dur-base) var(--ease);
+}
+
+/* 已填充段：用渐变模拟 fill（百分比由内联 --sb-fill 控制）*/
+.sb-slider {
+  background: linear-gradient(
+    90deg,
+    var(--gold) 0%,
+    var(--gold) var(--sb-fill, 50%),
+    var(--surface-3) var(--sb-fill, 50%),
+    var(--surface-3) 100%
+  );
+}
+
+.sb-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid var(--bg-base);
+  box-shadow: 0 2px 8px var(--gold-glow), 0 0 0 1px var(--hairline-strong);
+  cursor: grab;
+  transition: transform var(--dur-micro) var(--ease), box-shadow var(--dur-micro) var(--ease);
+}
+.sb-slider::-webkit-slider-thumb:hover { transform: scale(1.12); box-shadow: 0 4px 14px var(--gold-glow), 0 0 0 1px var(--gold); }
+.sb-slider:active::-webkit-slider-thumb { cursor: grabbing; transform: scale(1.05); box-shadow: 0 0 0 6px var(--gold-glow); }
+
+.sb-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid var(--bg-base);
+  box-shadow: 0 2px 8px var(--gold-glow), 0 0 0 1px var(--hairline-strong);
+  cursor: grab;
+}
+.sb-slider::-moz-range-progress { background: var(--gold); height: 6px; border-radius: 999px; }
+.sb-slider::-moz-range-track { background: var(--surface-3); height: 6px; border-radius: 999px; }
+
+.sb-slider:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+.sb-result-num {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--text-1);
+  font-variant-numeric: tabular-nums;
+  transition: color var(--dur-base) var(--ease);
+}
+
+.sb-preset {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  padding: 11px 13px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--hairline);
+  background: var(--surface-2);
+  cursor: pointer;
+  transition: all var(--dur-base) var(--ease);
+}
+.sb-preset:hover { border-color: var(--hairline-strong); background: var(--surface-3); transform: translateY(-1px); }
+.sb-preset.is-active { border-color: var(--gold); background: var(--gold-dim); box-shadow: inset 0 1px 0 var(--glass-highlight), 0 0 0 1px var(--gold-glow); }
+
+@media (prefers-reduced-motion: reduce) {
+  .sb-slider::-webkit-slider-thumb, .sb-preset, .sb-result-num { transition: none; }
+}
