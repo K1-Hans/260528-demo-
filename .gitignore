@@ -5,3 +5,9 @@ dist-ssr
 .DS_Store
 .vite
 *.log
+*.tsbuildinfo
+
+# Local-only Claude/Skill tooling (not relevant to deploy)
+.claude/
+.agents/
+.hermes/
