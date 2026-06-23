@@ -1,0 +1,26 @@
+{
+  "name": "ai-marketing-growth",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "AI 营销增长中台 · 洞察→创意→投放→归因 全链路操作系统 · Studio 亮台 + 增长品红 · 活动排期编排 demo",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "echarts": "^5.5.0",
+    "lucide-react": "^0.456.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.5"
+  }
+}

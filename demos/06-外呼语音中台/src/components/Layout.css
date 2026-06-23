@@ -1,0 +1,107 @@
+.app-shell { display: flex; height: 100vh; overflow: hidden; background: transparent; }
+
+/* ── Sidebar ── */
+.sidebar {
+  width: var(--nav-w); min-width: var(--nav-w);
+  background: var(--glass-bg);
+  border-right: 1px solid var(--hairline);
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.sidebar-logo { display: flex; align-items: center; gap: 11px; padding: 15px 16px; border-bottom: 1px solid var(--hairline); background: transparent; border-left: none; border-right: none; border-top: none; cursor: pointer; width: 100%; }
+.logo-mark {
+  width: 34px; height: 34px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--gold-bright), var(--bronze));
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 16px; color: var(--accent-ink);
+  letter-spacing: -0.03em; flex-shrink: 0;
+  box-shadow: 0 2px 14px var(--gold-glow), inset 0 1px 0 rgba(255,255,255,0.28);
+}
+.logo-title { font-size: 13px; font-weight: 700; color: var(--text-1); line-height: 1.2; }
+.logo-sub { font-size: 10px; color: var(--text-3); letter-spacing: 0.06em; margin-top: 1px; }
+
+.nav { flex: 1; overflow-y: auto; padding: 10px 9px; }
+.nav-group-wrap { margin-bottom: 2px; }
+.nav-item, .nav-group, .nav-child {
+  display: flex; align-items: center; gap: 9px; width: 100%;
+  padding: 8px 10px; border-radius: 9px; background: transparent; border: none;
+  color: var(--text-2); font-size: 13px; font-weight: 500; cursor: pointer;
+  text-align: left; transition: all var(--dur-micro) var(--ease); font-family: inherit;
+}
+.nav-item:hover, .nav-group:hover, .nav-child:hover { background: var(--surface-2); color: var(--text-1); }
+.nav-item-active { background: var(--gold-glow); color: var(--gold); border: 1px solid var(--hairline-strong); font-weight: 600; }
+.nav-group { justify-content: space-between; }
+.nav-group-left { display: flex; align-items: center; gap: 9px; }
+.nav-group-active .nav-group-left { color: var(--gold); }
+.nav-children { padding-left: 9px; margin: 2px 0 2px 19px; border-left: 1px solid var(--hairline); display: flex; flex-direction: column; gap: 1px; }
+.nav-child { padding: 6px 10px; font-size: 12.5px; color: var(--text-3); }
+.nav-child-active { color: var(--gold); background: var(--gold-glow); font-weight: 600; }
+
+.sidebar-footer { display: flex; align-items: center; gap: 9px; padding: 12px; border-top: 1px solid var(--hairline); }
+.sidebar-footer .avatar { width: 32px; height: 32px; }
+.uf-name { font-size: 12.5px; font-weight: 600; color: var(--text-1); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.uf-role { font-size: 10px; font-weight: 600; letter-spacing: 0.04em; }
+
+/* ── Main / Topbar ── */
+.main { flex: 1; display: flex; flex-direction: column; overflow: hidden; background: transparent; min-width: 0; }
+.topbar {
+  height: var(--topbar-h); flex-shrink: 0;
+  display: flex; align-items: center; gap: 14px; padding: 0 20px;
+  border-bottom: 1px solid var(--hairline);
+  background: var(--glass-bg);
+  position: sticky; top: 0; z-index: 20;
+}
+.crumb { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--text-3); white-space: nowrap; }
+.crumb-current { color: var(--text-1); font-weight: 600; }
+
+/* Glean 式醒目全局搜索（宽、居中偏左、档案纸感） */
+.global-search {
+  display: flex; align-items: center; gap: 10px; flex: 1; max-width: 560px; margin: 0 auto 0 14px;
+  padding: 9px 14px; border-radius: var(--r-md); cursor: text;
+  background: var(--surface-1); border: 1px solid var(--hairline); color: var(--text-3);
+  font-size: 13.5px; transition: border-color var(--dur-micro) var(--ease), box-shadow var(--dur-micro) var(--ease);
+  box-shadow: var(--elev-1);
+}
+.global-search:hover { border-color: var(--hairline-strong); box-shadow: 0 0 0 3px var(--gold-glow); }
+.global-search-ph { flex: 1; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.global-search .kbd { margin-left: auto; }
+.kbd { font-family: var(--font-mono); font-size: 10px; padding: 1px 6px; border-radius: 5px; background: var(--surface-3); border: 1px solid var(--hairline); color: var(--text-3); }
+
+/* 作战室 LIVE 集群（实时脉冲 + 等宽跳秒钟） */
+.live-cluster { display: flex; align-items: center; gap: 7px; padding: 5px 11px; border-radius: var(--r-sm); background: var(--surface-2); border: 1px solid var(--hairline); white-space: nowrap; }
+.live-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; color: var(--success); }
+.live-clock { font-size: 12.5px; font-weight: 600; color: var(--text-1); letter-spacing: 0.02em; }
+@media (max-width: 1080px) { .live-cluster { display: none; } }
+.comp-lights-wrap { display: flex; }
+@media (max-width: 1320px) { .comp-lights-wrap { display: none; } }
+
+.icon-btn {
+  width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center;
+  background: transparent; border: 1px solid transparent; color: var(--text-2); cursor: pointer;
+  transition: all var(--dur-micro) var(--ease); position: relative;
+}
+.icon-btn:hover { background: var(--surface-2); color: var(--text-1); border-color: var(--hairline); }
+.dot-badge { position: absolute; top: 7px; right: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--danger); }
+.content { flex: 1; overflow-y: auto; background: transparent; }
+.content-anim { animation: fadeUp 220ms var(--ease) both; }
+
+/* ── Command Palette ── */
+.cmdk-overlay { position: fixed; inset: 0; z-index: 100; background: rgba(20,18,14,0.4); backdrop-filter: blur(4px); display: flex; align-items: flex-start; justify-content: center; padding-top: 14vh; animation: fadeIn 150ms var(--ease); }
+[data-theme='dark'] .cmdk-overlay { background: rgba(4,6,12,0.55); }
+.cmdk-panel { width: 580px; max-width: 92vw; background: var(--surface-1); border: 1px solid var(--hairline-strong); border-radius: var(--r-lg); box-shadow: var(--elev-2); overflow: hidden; animation: fadeUp 180ms var(--ease); }
+.cmdk-input-row { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--hairline); }
+.cmdk-input { flex: 1; background: transparent; border: none; outline: none; color: var(--text-1); font-size: 15px; font-family: inherit; }
+.cmdk-list { max-height: 54vh; overflow-y: auto; padding: 8px; }
+.cmdk-group-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); padding: 8px 10px 4px; font-weight: 600; }
+.cmdk-item { display: flex; align-items: center; gap: 11px; padding: 9px 11px; border-radius: 9px; cursor: pointer; color: var(--text-2); font-size: 13.5px; }
+.cmdk-item-active { background: var(--gold-glow); color: var(--gold); }
+.cmdk-item-active .cmdk-sub { color: var(--bronze); }
+.cmdk-sub { font-size: 11px; color: var(--text-3); margin-left: auto; }
+
+/* ── 移动端 ── */
+.hamburger { display: none; }
+.nav-scrim { display: none; }
+@media (max-width: 760px) {
+  .hamburger { display: flex; }
+  .global-search-ph { display: none; }
+  .global-search { flex: 0; max-width: none; margin: 0; padding: 9px; }
+}

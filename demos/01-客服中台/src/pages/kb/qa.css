@@ -1,0 +1,10 @@
+/* QA 知识库页 · 局部样式（待发布行琥珀高亮，仅本页用） */
+.tbl tbody tr.qa-row-pending {
+  background: color-mix(in srgb, var(--warning) 7%, transparent);
+}
+.tbl tbody tr.qa-row-pending:hover {
+  background: color-mix(in srgb, var(--warning) 12%, transparent);
+}
+.tbl tbody tr.qa-row-pending td:first-child {
+  box-shadow: inset 2px 0 0 var(--warning);
+}
