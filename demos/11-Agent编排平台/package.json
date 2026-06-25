@@ -1,0 +1,26 @@
+{
+  "name": "ai-agent-orchestration",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "AI Agent 编排平台 · 编排→执行→调试→发布 全链路 · 电路墨暗台 + 电光青 · 实时执行数据流画布 demo",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "echarts": "^5.5.0",
+    "lucide-react": "^0.456.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.5"
+  }
+}
