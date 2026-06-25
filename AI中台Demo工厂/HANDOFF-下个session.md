@@ -1,4 +1,4 @@
-# 中台系统 demo 开发官 · Session Handoff(①②③⑤⑦⑧ 验收通过 · ④⑥ 自验待终验 · ⑨ 营销增长建设中 · 2026-06-23)
+# 中台系统 demo 开发官 · Session Handoff(①②③⑤⑦⑧⑨⑩ 验收通过 · ④⑥ 自验待终验 · ⑪ B5 Agent 编排建设中 · 2026-06-25)
 
 ## 身份 · 起手必读 3 份
 「中台系统 demo 开发官」(审美第一)。先读:
@@ -7,7 +7,7 @@
 3. `~/Desktop/260528中台系统demo开发/AI中台Demo工厂/00-总规划-全景排序与选型.md`
 > ⚠️ 总规划 §58「所有 demo 共用一套底只换 accent」**已作废** —— 见「差异化双层铁律」。
 
-## 任务 · 高审美 mock 中台 demo 矩阵(Hans 转 B 端履历)· **已建 9 个**
+## 任务 · 高审美 mock 中台 demo 矩阵(Hans 转 B 端履历)· **已建 10 个 + ⑪ B5 建设中**
 - ① AI 客服中台 ✅ **验收通过**(暖象牙暖呼吸 · 实时指挥墙) `demos/01-客服中台` 5181
 - ② AI 质检中台 ✅ **验收通过**(冷瓷卷宗 · 案卷台) `demos/02-质检中台` 5182
 - ③ LLMOps 运营中台 ✅ **验收通过**(深空示波 · 键盘观测台) `demos/03-LLMOps` 5183
@@ -16,12 +16,13 @@
 - ⑥ AI 外呼/语音中台 🟡 **已交付自验**(Operator Midnight · 实时坐席墙) `demos/06-外呼语音中台` 5186 — 本 session 全 11 页复验 + 修了 border 报错 bug,待 Hans 终验
 - ⑦ AI 内容审核中台 ✅ **验收通过(2026-06-22「过」)**(证物灯箱 · 审片流水台) `demos/07-内容审核中台` 5187 — 7 页 4 角色,媒体前置键盘 culling
 - ⑧ AI 数据中台 ✅ **验收通过(2026-06-23「过」)**(冷演算纸 · 演算蓝 · 问数 Notebook) `demos/08-数据中台` 5188 — 6 页 4 角色,旗舰问数台 4 阶可信度"答不了报错";收口修了 Ask 旗舰图裸 var() 掉色 + index.html title 陈留 ④
-- ⑨ AI 营销增长中台 🟠 **建设中(2026-06-23)**(Studio 亮台 · 增长品红 #D6336C · 活动排期编排泳道) `demos/09-营销增长` 5189 — 6 页 4 角色;地基+旗舰 Campaign(排期泳道+人审卡点)done,Studio/Cdp/Ads/Attribution/Assets 并行写中
+- ⑨ AI 营销增长中台 ✅ **验收通过(2026-06-24「好,继续」)**(Studio 亮台 · 增长品红 #D6336C · 活动排期编排泳道) `demos/09-营销增长` 5189 — 6 页 4 角色,旗舰 Campaign(排期泳道+人审卡点),归因桑基/投放热力/漏斗/旭日真 ECharts;build 绿 console 0,红线全过
+- ⑩ AI 供应链/履约中台 ✅ **验收通过(2026-06-24「好继续」)**(钢蓝石板暗台 · 货运琥珀 #F0883E · 控制塔物流网络地图) `demos/10-供应链` 5190 — 6 页 4 角色,旗舰 Tower(scatter节点+lines在途货流动效网络图+异常流+履约阶段),What-if 拉杆模拟;build 绿 console 0,红线全过
 
 ## 🆕 差异化双层铁律(本项目灵魂 · 每个 demo 像不同产品)
-两层都差异化:(1)视觉调性 (2)UX 交互范式(对标一个真实顶级产品的"操作方式")。9 个各异:
-- ① 实时指挥墙(锚 Slack/Datadog) · ② 案卷 inbox(锚 Linear/Front) · ③ 键盘观测台 ⌘K+极简rail(锚 Datadog/Grafana) · ④ 图谱画布(锚 Figma/Obsidian/Glean) · ⑤ 风险作战大屏 密集多窗格+红黑盘口(锚 Bloomberg×SOC) · ⑥ 实时坐席墙(卡片墙呼吸+声波+双气泡转写,锚 Dialpad/Genesys) · ⑦ **审片流水台**(媒体前置暗台+框选高亮+取证青扫描+键盘 culling A/R/E/L,锚 Frame.io×Photo Mechanic×Hive/Checkstep) · ⑧ **问数 Notebook**(cell 式问数+4 阶可信度+SQL透明块,锚 Hex/Cortex Analyst) · ⑨ **活动排期编排泳道**(横向时间轴泳道+预热/正式/返场分段+人审卡点队列,锚 Braze/Amplitude/巨量引擎)
-- ⚠️ ③⑤⑥⑦ 都暗系:靠**范式 + accent + 签名**区分,非只换底色。⑦ = 冷中性石墨 + 取证青 hero + 风险 5 阶语义 + **恒定暗媒体台**(亮主题下媒体仍在暗台判定 · Lightroom 式)。
+两层都差异化:(1)视觉调性 (2)UX 交互范式(对标一个真实顶级产品的"操作方式")。10 个各异:
+- ① 实时指挥墙(锚 Slack/Datadog) · ② 案卷 inbox(锚 Linear/Front) · ③ 键盘观测台 ⌘K+极简rail(锚 Datadog/Grafana) · ④ 图谱画布(锚 Figma/Obsidian/Glean) · ⑤ 风险作战大屏 密集多窗格+红黑盘口(锚 Bloomberg×SOC) · ⑥ 实时坐席墙(卡片墙呼吸+声波+双气泡转写,锚 Dialpad/Genesys) · ⑦ **审片流水台**(媒体前置暗台+框选高亮+取证青扫描+键盘 culling A/R/E/L,锚 Frame.io×Photo Mechanic×Hive/Checkstep) · ⑧ **问数 Notebook**(cell 式问数+4 阶可信度+SQL透明块,锚 Hex/Cortex Analyst) · ⑨ **活动排期编排泳道**(横向时间轴泳道+预热/正式/返场分段+人审卡点队列,锚 Braze/Amplitude/巨量引擎) · ⑩ **控制塔物流网络地图**(scatter 节点+lines 在途货流动效+异常预警流+What-if 拉杆模拟,锚 o9/Kinaxis/项目44)
+- ⚠️ ③⑤⑥⑦⑩ 都暗系:靠**范式 + accent + 签名**区分,非只换底色。⑩ = 钢蓝石板(非黑曜/深空/青墨/石墨)+ 货运琥珀(唯一暖橙暗系 accent)+ 物流网络地图 hero(9 个里唯一地图)。⑦ = 冷中性石墨 + 取证青 hero + 风险 5 阶语义 + **恒定暗媒体台**(亮主题下媒体仍在暗台判定 · Lightroom 式)。
 - ⚠️ 亮系 ①②④⑧⑨ 靠 accent+范式 区分:① 暖象牙 · ② 冷瓷 · ④ 暖灰纸靛蓝 · ⑧ 冷演算纸演算蓝 · ⑨ = **明亮画廊白 + 增长品红 #D6336C**(唯一亮系暖品红,排期泳道+创意网格,反"墙/大屏/画布/notebook")。
 
 ## 五铁律
@@ -52,10 +53,11 @@
 11. 🆕 ⚠️ **preview MCP server 被 kill/重启后,新 server 的浏览器窗口会卡 native 窄宽**(`window.innerWidth` 报 1440 但截图 paint 仍 ~270px 挤左上角,resize 无效)。**第一个 server 截图正常,重启后的不正常**。规避:**一次起对的 server 别 kill**(验证全程复用同一个);若已重启 → 截图无效但 `preview_snapshot`/`preview_eval` 验内容仍可靠(DOM 真是 1440)。⑧ 收口踩过。
 12. 🆕 count-up(StatCard) 在 preview/未 focused 窗口被 rAF 节流冻在中途(显小数/0)→ hook 是时间基的,Hans focused 真机跑满,非 bug;验数据正确看 mockData/副标题静态值,别信 preview 冻结的 KPI 数字。
 
-## 现状 = 9 demo 矩阵(①②③⑤⑦⑧ 验收通过 · ④⑥ 自验待终验 · ⑨ 建设中)
-各 `npm --prefix demos/0X-... run dev` 起(①5181 ②5182 ③5183 ④5184 ⑤5185 ⑥5186 ⑦5187 ⑧5188 ⑨5189)。launch.json 已含 kefu/zhijian/llmops/zhiku/fengkong/waihu/shenhe/shuju/yingxiao。
-**⑨ 营销增长收尾要做**:Workflow 写完 5 页(Studio/Cdp/Ads/Attribution/Assets)后 → lead 跑全量 build 收口 + 红线扫描(裸 var()/border 混用/key/未用 import)+ 真机逐屏验 6 页 4 角色(罗芮 growth→/campaign /cdp · 周野 creative→/studio /assets · 高崎 media→/ads /attribution · 韦珩 cmo→全只读)→ nohup 5189 交付。
-**待选下一个(⑨ 之后)**:总规划 8 brief 已建 3 个(B1 数据=⑧,B2 内容审核=⑦,B3 营销=⑨),**剩 4 个**:B4 销售SDR · B5 Agent编排 · B6 RAG评测 · B7 供应链 · B8 HR招聘(注:B4-B8 实为 5 个,B4 销售 SDR 有信誉风险降级)。⚠️ B5/B6 与 ④知识 同域(图谱/检索/溯源)易撞范式;B7 供应链(控制塔+物流地图)/B8 HR(面试间)差异化最干净。
+## 现状 = 10 demo 验收/自验完成 + ⑪ B5 Agent 编排建设中(①②③⑤⑦⑧⑨⑩ 验收通过 · ④⑥ 自验待终验)
+各 `npm --prefix demos/0X-... run dev` 起(①5181…⑧5188 ⑨5189 ⑩5190 ⑪5191)。launch.json 已含 …shuju/yingxiao/gongying,待加 agent。
+**Git 现状(待 Hans 决)**:分支 feat/demo-matrix-08-09,PR #1(K1-Hans/260528-demo- #1)目前只含 ⑧⑨;⑩ 代码**未提交**;⑪ B5 脚手架未追踪。⑩ 是否进 PR #1 待 Hans 拍板。
+**⑪ B5 Agent 编排平台要做(2026-06-25 起)**:`demos/11-Agent编排平台` 5191,已 cp -Rc 脚手架。⚠️ 撞车红线:与 ④知识「图谱画布」同"画布"范式 + 易抄 Dify/n8n → **必另立范式**(走 run-trace 执行流/实时运行态时间线,非知识关系图)+ 金融垂直场景(风控调查/投研多 agent)+ 没用过的 accent/底。Plan 调性/范式/IA/配色 → AskUserQuestion 给 Hans A/B 确认 → 重 theme → 分波 Workflow 写页 → build 收口 + 红线扫 → 真机验 → nohup 5191。
+**剩余 brief(B5 之后)**:B4 销售SDR(11x 虚报信誉风险需谨慎) · B6 RAG评测(与 ④/B5 同域需另立调性) · B8 HR招聘(面试间/候选人管线差异化最干净)。
 
 ## 起手语(对 Hans)
-「接续:中台 demo 矩阵已建 9 个 —— ①②③⑤⑦⑧ 验收通过,④知识 + ⑥外呼 待你终验(④→5184,⑥→5186)。⑨ 营销增长「Studio 亮台·增长品红·排期编排泳道」建设中(→5189)。要终验 ④/⑥ / 收口验 ⑨ / 还是从剩 brief 开新 demo?你说,我先 Plan 同步再动手。」
+「接续:中台 demo 矩阵已建 10 个 —— ①②③⑤⑦⑧⑨ 验收通过,④知识 + ⑥外呼 待你终验(④→5184,⑥→5186)。⑩ 供应链「钢蓝控制塔·货运琥珀·物流网络地图」建设中(→5190)。要终验 ④/⑥ / 收口验 ⑩ / 还是从剩 4 brief(B4销售/B5Agent/B6RAG/B8HR)开新 demo?你说,我先 Plan 同步再动手。」
