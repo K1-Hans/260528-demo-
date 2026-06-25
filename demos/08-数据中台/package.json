@@ -1,0 +1,26 @@
+{
+  "name": "ai-data-platform",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "智库 企业知识中台 · 对标 Glean · 权限感知 + 可溯源 · 靛蓝档案 demo",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "echarts": "^5.5.0",
+    "lucide-react": "^0.456.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.5"
+  }
+}

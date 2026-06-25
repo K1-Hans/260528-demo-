@@ -1,0 +1,26 @@
+{
+  "name": "ai-supply-chain",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "AI 供应链/履约中台 · 需求预测→库存→补货→履约→风险 全链路 · 钢蓝控制塔 + 货运琥珀 · 物流网络地图 demo",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "echarts": "^5.5.0",
+    "lucide-react": "^0.456.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.5"
+  }
+}

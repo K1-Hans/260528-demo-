@@ -1,0 +1,152 @@
+.app-shell { display: flex; height: 100vh; overflow: hidden; background: transparent; }
+
+/* ════ 极简图标 rail（悬停展开 overlay,内容不位移 · 键盘驱动控制台范式）════ */
+.rail { width: var(--rail-w); min-width: var(--rail-w); flex-shrink: 0; position: relative; z-index: 40; }
+.rail-inner {
+  position: absolute; top: 0; left: 0; bottom: 0; width: var(--rail-w);
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  border-right: 1px solid var(--hairline);
+  display: flex; flex-direction: column; overflow: hidden;
+  transition: width var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease);
+}
+.rail:hover .rail-inner { width: var(--rail-w-open); box-shadow: var(--elev-2); border-right-color: var(--hairline-strong); }
+
+/* logo */
+.rail-logo {
+  display: flex; align-items: center; gap: 11px; height: var(--topbar-h); min-height: var(--topbar-h);
+  padding-left: 14px; border: none; border-bottom: 1px solid var(--hairline); background: transparent;
+  cursor: pointer; width: 100%; text-align: left; flex-shrink: 0;
+}
+.logo-mark {
+  width: 32px; height: 32px; border-radius: 9px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--gold-bright), var(--bronze));
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 16px; color: var(--accent-ink);
+  letter-spacing: -0.03em; box-shadow: 0 2px 14px var(--gold-glow), inset 0 1px 0 rgba(255,255,255,0.22);
+}
+.rail-logo-text { opacity: 0; transition: opacity var(--dur-base) var(--ease); white-space: nowrap; }
+.rail:hover .rail-logo-text { opacity: 1; }
+.logo-title { font-size: 13.5px; font-weight: 700; color: var(--text-1); line-height: 1.2; }
+.logo-sub { font-size: 10px; color: var(--text-3); letter-spacing: 0.06em; margin-top: 1px; }
+
+/* nav */
+.rail-nav { flex: 1; overflow-y: auto; overflow-x: hidden; padding: 8px 8px 4px; }
+.rail-group { margin-bottom: 2px; }
+.rail-section {
+  position: relative; height: 26px; display: flex; align-items: center;
+  padding-left: 13px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: transparent; white-space: nowrap; transition: color var(--dur-base) var(--ease); pointer-events: none;
+}
+.rail:hover .rail-section { color: var(--text-3); }
+.rail-section::before { content: ''; position: absolute; left: 13px; top: 50%; width: 18px; height: 1px; background: var(--hairline-strong); opacity: 0.7; transition: opacity var(--dur-micro) var(--ease); }
+.rail:hover .rail-section::before { opacity: 0; }
+
+.rail-item {
+  display: flex; align-items: center; width: 100%; height: 38px; border-radius: 9px;
+  border: none; background: transparent; color: var(--text-2); cursor: pointer;
+  position: relative; transition: background var(--dur-micro) var(--ease), color var(--dur-micro) var(--ease); font-family: inherit;
+}
+.rail-ico { width: 44px; min-width: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.rail-label { font-size: 13px; font-weight: 500; white-space: nowrap; opacity: 0; transition: opacity var(--dur-base) var(--ease); }
+.rail:hover .rail-label { opacity: 1; }
+.rail-item:hover { background: var(--surface-2); color: var(--text-1); }
+.rail-item-active { color: var(--gold); background: var(--gold-glow); font-weight: 600; }
+.rail-item-active .rail-label { font-weight: 600; }
+.rail-item-active::before { content: ''; position: absolute; left: -8px; top: 8px; bottom: 8px; width: 3px; border-radius: 0 3px 3px 0; background: var(--gold); box-shadow: 0 0 10px var(--gold-glow); }
+
+/* ⌘K 启动器 */
+.rail-cmdk {
+  display: flex; align-items: center; height: 38px; margin: 6px 8px; border-radius: 9px;
+  border: 1px solid var(--hairline); background: var(--surface-2); color: var(--text-2); cursor: pointer;
+  position: relative; transition: all var(--dur-micro) var(--ease); font-family: inherit; flex-shrink: 0;
+}
+.rail-cmdk:hover { border-color: var(--hairline-strong); color: var(--text-1); }
+.rail-cmdk .rail-label { font-size: 12.5px; }
+.rail-kbd { opacity: 0; margin-left: auto; margin-right: 10px; transition: opacity var(--dur-base) var(--ease); }
+.rail:hover .rail-kbd { opacity: 1; }
+
+/* foot */
+.rail-foot { display: flex; align-items: center; gap: 9px; height: var(--topbar-h); min-height: var(--topbar-h); padding-left: 15px; border-top: 1px solid var(--hairline); flex-shrink: 0; }
+.rail-user { opacity: 0; transition: opacity var(--dur-base) var(--ease); flex: 1; min-width: 0; white-space: nowrap; }
+.rail:hover .rail-user { opacity: 1; }
+.uf-name { font-size: 12.5px; font-weight: 600; color: var(--text-1); overflow: hidden; text-overflow: ellipsis; }
+.uf-role { font-size: 10px; font-weight: 600; letter-spacing: 0.04em; }
+.rail-logout { opacity: 0; margin-right: 9px; transition: opacity var(--dur-base) var(--ease); }
+.rail:hover .rail-logout { opacity: 1; }
+
+/* ════ Main / Topbar ════ */
+.main { flex: 1; display: flex; flex-direction: column; overflow: hidden; background: transparent; min-width: 0; }
+.topbar {
+  height: var(--topbar-h); flex-shrink: 0; display: flex; align-items: center; gap: 14px; padding: 0 18px;
+  border-bottom: 1px solid var(--hairline);
+  background: var(--glass-bg); -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  position: sticky; top: 0; z-index: 20;
+}
+.crumb { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--text-3); white-space: nowrap; }
+.crumb-current { color: var(--text-1); font-weight: 600; }
+.topbar-search {
+  display: flex; align-items: center; gap: 8px; width: 246px; max-width: 28vw;
+  padding: 6px 10px; border-radius: var(--r-sm); cursor: text;
+  background: var(--surface-2); border: 1px solid var(--hairline); color: var(--text-3);
+  font-size: 13px; transition: border-color var(--dur-micro) var(--ease);
+}
+.topbar-search:hover { border-color: var(--hairline-strong); }
+.topbar-search .kbd-key { margin-left: auto; }
+.topbar-right { margin-left: auto; }
+.topbar-sep { width: 1px; height: 20px; background: var(--hairline); }
+
+/* 时间范围 + Live（Datadog 招牌） */
+.range-picker { display: flex; gap: 2px; background: var(--surface-2); border: 1px solid var(--hairline); border-radius: var(--r-sm); padding: 2px; }
+.range-btn { font-family: var(--font-mono); font-size: 11.5px; padding: 3px 9px; border-radius: 5px; border: none; background: transparent; color: var(--text-3); cursor: pointer; transition: all var(--dur-micro) var(--ease); }
+.range-btn-active { background: var(--surface-1); color: var(--gold); box-shadow: var(--elev-1); }
+.range-btn:not(.range-btn-active):hover { color: var(--text-1); }
+.live-toggle { display: flex; align-items: center; gap: 7px; padding: 5px 11px; border-radius: var(--r-pill); border: 1px solid var(--hairline); background: var(--surface-2); color: var(--text-3); font-size: 12px; font-weight: 600; cursor: pointer; transition: all var(--dur-base) var(--ease); }
+.live-toggle.live-on { color: var(--emerald); border-color: var(--hairline-strong); background: var(--gold-glow); }
+.live-dot-off { width: 7px; height: 7px; border-radius: 50%; background: var(--text-3); flex-shrink: 0; }
+
+.icon-btn {
+  width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center;
+  background: transparent; border: 1px solid transparent; color: var(--text-2); cursor: pointer;
+  transition: all var(--dur-micro) var(--ease); position: relative;
+}
+.icon-btn:hover { background: var(--surface-2); color: var(--text-1); border-color: var(--hairline); }
+.dot-badge { position: absolute; top: 7px; right: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--danger); }
+.user-chip { background: transparent; border: 1px solid var(--hairline); border-radius: 8px; padding: 4px 8px 4px 4px; cursor: pointer; }
+.user-chip:hover { border-color: var(--hairline-strong); }
+.user-chip-name { font-size: 13px; font-weight: 600; color: var(--text-1); }
+
+.content { flex: 1; overflow-y: auto; background: transparent; }
+.content-anim { animation: fadeUp 220ms var(--ease) both; }
+
+/* 旧别名（CommandPalette 用 .kbd） */
+.kbd { font-family: var(--font-mono); font-size: 10px; padding: 1px 6px; border-radius: 5px; background: var(--surface-3); border: 1px solid var(--hairline); color: var(--text-3); }
+
+/* ════ Command Palette ════ */
+.cmdk-overlay { position: fixed; inset: 0; z-index: 100; background: rgba(2,4,8,0.55); backdrop-filter: blur(5px); display: flex; align-items: flex-start; justify-content: center; padding-top: 13vh; animation: fadeIn 150ms var(--ease); }
+.cmdk-panel { width: 580px; max-width: 92vw; background: var(--glass-bg); -webkit-backdrop-filter: blur(26px) saturate(170%); backdrop-filter: blur(26px) saturate(170%); border: 1px solid var(--hairline-strong); border-radius: var(--r-lg); box-shadow: var(--elev-2), inset 0 1px 0 var(--glass-highlight); overflow: hidden; animation: fadeUp 180ms var(--ease); }
+.cmdk-input-row { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--hairline); }
+.cmdk-input { flex: 1; background: transparent; border: none; outline: none; color: var(--text-1); font-size: 15px; font-family: inherit; }
+.cmdk-list { max-height: 54vh; overflow-y: auto; padding: 8px; }
+.cmdk-group-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); padding: 8px 10px 4px; font-weight: 600; }
+.cmdk-item { display: flex; align-items: center; gap: 11px; padding: 9px 11px; border-radius: 9px; cursor: pointer; color: var(--text-2); font-size: 13.5px; }
+.cmdk-item-active { background: var(--gold-glow); color: var(--gold); }
+.cmdk-item-active .cmdk-sub { color: var(--bronze); }
+.cmdk-sub { font-size: 11px; color: var(--text-3); margin-left: auto; font-family: var(--font-mono); }
+
+/* ════ 移动端：rail → off-canvas（展开态） ════ */
+@media (max-width: 760px) {
+  .rail { width: 0; min-width: 0; }
+  .rail-inner { width: var(--rail-w-open); transform: translateX(-100%); transition: transform 0.26s var(--ease); z-index: 60; box-shadow: var(--elev-2); }
+  .app-shell.nav-open .rail-inner { transform: translateX(0); }
+  .rail-logo-text, .rail-label, .rail-user, .rail-logout, .rail-kbd { opacity: 1 !important; }
+  .rail-section { color: var(--text-3) !important; }
+  .rail-section::before { opacity: 0 !important; }
+  .nav-scrim { display: block; position: fixed; inset: 0; z-index: 55; background: rgba(2,4,8,0.55); opacity: 0; pointer-events: none; transition: opacity 0.2s var(--ease); }
+  .app-shell.nav-open .nav-scrim { opacity: 1; pointer-events: auto; }
+  .topbar { gap: 8px; padding: 0 12px; }
+  .topbar-search { display: none; }
+  .range-picker { display: none; }
+  .topbar-sep { display: none; }
+}
+.nav-scrim { display: none; }

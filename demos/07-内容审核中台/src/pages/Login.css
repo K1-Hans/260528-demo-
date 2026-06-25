@@ -1,0 +1,55 @@
+.login-page {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  background: var(--bg-sunken); position: relative; overflow: hidden;
+}
+.login-glow { position: absolute; border-radius: 50%; filter: blur(96px); pointer-events: none; }
+.login-glow-1 { width: 480px; height: 480px; background: radial-gradient(circle, var(--gold-glow), transparent 70%); top: -130px; left: -110px; animation: floatA 14s ease-in-out infinite; }
+.login-glow-2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(124,138,165,0.07), transparent 70%); bottom: -90px; right: -70px; animation: floatB 16s ease-in-out infinite; }
+@keyframes floatA { 0%,100% { transform: translate(0,0); } 50% { transform: translate(44px,32px); } }
+@keyframes floatB { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-34px,-42px); } }
+
+.login-theme { position: absolute; top: 22px; right: 22px; }
+
+.login-card {
+  position: relative; width: 432px; max-width: 92vw;
+  background: var(--surface-1); border: 1px solid var(--hairline-strong);
+  border-radius: var(--r-xl); padding: 36px 34px; box-shadow: var(--elev-2);
+  animation: fadeUp 420ms var(--ease) both;
+}
+.login-header { text-align: center; margin-bottom: 20px; }
+.login-logo {
+  width: 60px; height: 60px; border-radius: 17px; display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px; background: linear-gradient(135deg, var(--gold-bright), var(--bronze));
+  color: var(--accent-ink); box-shadow: 0 6px 26px var(--gold-glow), inset 0 1px 0 rgba(255,255,255,0.24);
+}
+/* 审片灯箱 hero（取证青扫描线掠过证据缩略格） */
+.login-scan { position: relative; width: 210px; height: 30px; margin: 0 auto 12px; display: flex; gap: 6px; justify-content: center; overflow: hidden; }
+.login-scan-cell { width: 30px; height: 30px; border-radius: 6px; background: var(--media-stage); border: 1px solid var(--hairline); }
+.login-scan-line { position: absolute; top: 0; bottom: 0; width: 36px; pointer-events: none;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--gold) 55%, transparent), transparent);
+  filter: blur(2px); animation: scanX 2.6s var(--ease) infinite; }
+@keyframes scanX { 0% { left: -40px; opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { left: 210px; opacity: 0; } }
+
+.login-title { font-size: 21px; font-weight: 700; color: var(--text-1); letter-spacing: -0.01em; }
+.login-desc { font-size: 12px; color: var(--text-3); letter-spacing: 0.02em; margin-top: 6px; line-height: 1.5; }
+
+.sso-badge {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  font-size: 11px; color: var(--gold); background: var(--gold-glow);
+  border: 1px solid var(--hairline-strong); border-radius: 7px;
+  padding: 7px 12px; margin-bottom: 20px; letter-spacing: 0.01em;
+}
+.login-form { display: flex; flex-direction: column; gap: 14px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 12px; font-weight: 600; color: var(--text-2); letter-spacing: 0.03em; }
+.login-error { font-size: 12px; color: var(--danger); background: color-mix(in srgb, var(--danger) 10%, transparent); border: 1px solid color-mix(in srgb, var(--danger) 24%, transparent); border-radius: 7px; padding: 9px 12px; }
+.login-btn { width: 100%; padding: 11px 16px; font-size: 14px; margin-top: 4px; border-radius: 10px; letter-spacing: 0.06em; }
+
+.quick { margin-top: 20px; }
+.quick-toggle { display: flex; align-items: center; justify-content: center; gap: 5px; width: 100%; background: transparent; border: none; color: var(--text-3); font-size: 12px; cursor: pointer; padding: 5px; transition: color var(--dur-micro); }
+.quick-toggle:hover { color: var(--text-2); }
+.quick-list { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+.quick-user { display: flex; align-items: center; gap: 11px; background: var(--surface-2); border: 1px solid var(--hairline); border-radius: 10px; padding: 9px 11px; cursor: pointer; transition: all var(--dur-micro) var(--ease); text-align: left; }
+.quick-user:hover { border-color: var(--hairline-strong); background: var(--surface-3); transform: translateY(-1px); }
+.quick-name { font-size: 12.5px; font-weight: 600; color: var(--text-1); }
+.quick-role { font-size: 11px; color: var(--text-3); line-height: 1.4; margin-top: 2px; }

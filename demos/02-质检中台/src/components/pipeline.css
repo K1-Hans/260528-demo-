@@ -1,0 +1,22 @@
+/* ── Pipeline 阶段条（A1→A4 逐级点亮）── */
+.pipe { display: flex; flex-direction: column; gap: 4px; }
+.pipe-stage { position: relative; }
+.pipe-line { position: absolute; left: 15px; top: 30px; bottom: -4px; width: 1.5px; z-index: 0; }
+.pipe-head { position: relative; z-index: 1; display: flex; align-items: flex-start; gap: 11px; width: 100%; padding: 7px 8px; border: none; background: transparent; border-radius: 10px; transition: background var(--dur-micro) var(--ease); font-family: inherit; }
+.pipe-head:hover { background: var(--surface-2); }
+.pipe-node { width: 30px; height: 30px; border-radius: 9px; display: flex; align-items: center; justify-content: center; border: 1px solid; flex-shrink: 0; }
+.pipe-active .pipe-node { box-shadow: 0 0 0 4px var(--gold-glow); }
+.pipe-detail { margin: 2px 0 8px 41px; padding: 12px 14px; background: var(--surface-2); border: 1px solid var(--hairline); border-radius: 10px; animation: fadeUp 200ms var(--ease) both; }
+
+/* ── 对话气泡时间轴 ── */
+.conv { display: flex; flex-direction: column; }
+.conv-row { display: flex; align-items: flex-start; gap: 9px; }
+.conv-row-user { flex-direction: row-reverse; }
+.conv-av { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+.conv-av-bot { background: linear-gradient(135deg, var(--bronze), var(--gold-bright)); color: var(--accent-ink); }
+.conv-av-user { background: var(--surface-3); color: var(--text-2); border: 1px solid var(--hairline); }
+.conv-bubble { max-width: 560px; padding: 10px 14px; border-radius: 14px; font-size: 13.5px; line-height: 1.6; white-space: pre-wrap; word-break: break-word; }
+.conv-bot { background: color-mix(in srgb, var(--gold) 9%, var(--surface-1)); border: 1px solid color-mix(in srgb, var(--gold) 20%, var(--hairline)); color: var(--text-1); border-top-left-radius: 5px; }
+.conv-user { background: var(--surface-2); border: 1px solid var(--hairline); color: var(--text-1); border-top-right-radius: 5px; }
+.conv-blocked { background: color-mix(in srgb, var(--warning) 11%, var(--surface-1)); border-color: color-mix(in srgb, var(--warning) 40%, transparent); }
+.conv-meta { display: flex; align-items: center; gap: 8px; margin-top: 5px; font-size: 11px; color: var(--text-3); }

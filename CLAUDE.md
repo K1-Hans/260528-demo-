@@ -82,3 +82,21 @@
 ## 待确认事项
 
 - **JAYNITX《TASTE…》原文查无此文**（@jaynitx 账号真实但无该主题帖被索引）。当前 taste 哲学以 **Jobs + Andrés Max** 为据。若 Hans 持有原文链接 → 补录到 21 号文件并修订本节。
+
+
+## 🔑 KB 调用协议（知识官 2026-06-11 · 全设备统一）
+- **查知识先 `/kb <问题>`** — 统一前门，自动路由（跨项目索引 / mempalace 语义记忆 / 1851+ 源研究库），答案带引用。研究库深查可继续用 `/research-query`。
+- **复用先于重造**：调研 / 决策 / 踩坑修复前先问"之前有没有现成的"。
+- **学到新知识不直接写库**：暂存 `~/Desktop/260607知识官/research-staging/_scratch/<agent>/` 交知识官合并（单写者防漂移）。
+- 读写契约：`~/Desktop/260607知识官/RETRIEVAL-API.md` · 跨项目索引：`~/Desktop/260607知识官/INDEX/`
+
+## 🔑 KB 调用协议（知识官接入 · 2026-06-11）
+- **查知识先 `/kb <问题>`** — 统一前门（跨项目索引 / mempalace 语义记忆 / 1851+ 源研究库自动路由），答案带引用；研究库深查仍用 `/research-query`。
+- **复用先于重造**：调研、决策、踩坑处理前先问"之前有没有现成的"（`/kb` 或 spawn `lessons-retriever`）。
+- **学到新知识不直接写库**：暂存 `~/Desktop/260607知识官/research-staging/_scratch/<agent>/<date>.md`，由知识官（单写者）评审合并，防多写漂移。
+- 读写契约：`~/Desktop/260607知识官/RETRIEVAL-API.md` · 跨项目索引：`~/Desktop/260607知识官/INDEX/00-INDEX.md`
+
+## 🎨 顶级审美 UI 资源库（知识官 2026-06-15 · 跨设备统一）
+- **做任何 UI / 前端 / 视觉决策前，先抓顶级参照，不脑补站点**：175 个国内外经审核站点（灵感画廊 / 组件库 / 设计系统 / 配色 / 字体 / 图标 / 插画 / 图片 / mockup / 动效 / UX 方法论 · 22 类 · 免费优先）。
+- 调用：`/kb UI 设计资源 <场景>` · skill `ui-design-arsenal`（设计场景自动触发）· 看板 `open ~/Desktop/260407started/research/ui-design-arsenal.html`。
+- 正典：`~/Desktop/260407started/research/28-ui-design-resource-arsenal-sources.md`（场景路由 + 5 维审核机制 + EXCLUDED 防飘 + 默认取用清单）。配对**工具**库见 `23-frontend-aesthetic-arsenal-sources`，反 slop 见 `24-tasteskill-anti-slop-framework-sources`。
